@@ -1,0 +1,23 @@
+# Program to print even numbers from 1 to 10 using for-else
+
+for i in range(1, 11):
+    if i % 2 == 0:
+        print(i, end=" ")
+else:
+    print("anu")
+
+Output
+2 4 6 8 10 anu
+
+
+# Program to demonstrate 'for-else' with break
+
+for i in range(8):  # Loop from 0 to 7
+    if i == 7:      # If i equals 7, break the loop
+        break
+    print(i, end=" ")  # Print i on the same line
+else:
+    print("anu")  # This runs only if the loop is NOT broken
+
+Output:
+0 1 2 3 4 5 6 
