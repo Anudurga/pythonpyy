@@ -32,3 +32,16 @@ while x != 0:
 
 # Output
 print(f"Number of steps to reduce {x} to zero: {steps}")
+
+
+Enter a number x: 14
+Steps:
+14 is even → 14 ÷ 2 = 7
+7 is odd → 7 − 1 = 6
+6 is even → 6 ÷ 2 = 3
+3 is odd → 3 − 1 = 2
+2 is even → 2 ÷ 2 = 1
+1 is odd → 1 − 1 = 0
+
+Output:
+Number of steps to reduce 0 to zero: 6
