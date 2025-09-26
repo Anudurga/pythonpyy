@@ -1,3 +1,4 @@
+# Solution 1
 # Loop through numbers from 1 to 10
 for i in range(1, 11):  # Generates numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
     if i == 10:
@@ -11,26 +12,40 @@ Expected Output
 2,4,6,8,10.
 
 
+# Solution 2
+"""
+Program: Print even numbers up to (x-1) with a comma separator,
+and end the last number with a dot (.)
+Handles both even and odd inputs.
 
+Example:
+Input: 4
+Output: 2.
 
-# Program to print even numbers up to x with proper formatting (commas and period)
-# Get user input
-x = int(input("Enter x: "))  # Example: 4 or 7
+Input: 7
+Output: 2,4,6.
+"""
 
-# Create a list to store even numbers
-even_numbers = []
+# Taking input from user
+x = int(input("Enter x: "))
 
-# Collect even numbers from 1 to x (exclusive)
+# Loop through numbers from 1 to x-1
 for i in range(1, x):
-    if i % 2 == 0:
-        even_numbers.append(i)
+    if x % 2 == 0:  # Case 1: x is even
+        # If this is the second last number, print with dot (.)
+        if i == x - 2:
+            print(i, end=".")
+        # If i is even, print with comma (,)
+        elif i % 2 == 0:
+            print(i, end=",")
+    else:  # Case 2: x is odd
+        # If this is the last number, print with dot (.)
+        if i == x - 1:
+            print(i, end=".")
+        # If i is even, print with comma (,)
+        elif i % 2 == 0:
+            print(i, end=",")
 
-# Print even numbers with commas and a period at the end
-for idx, num in enumerate(even_numbers):
-    if idx == len(even_numbers) - 1:  # Last number
-        print(num, end=".")
-    else:
-        print(num, end=",")
 
 Input:
 Enter x: 4
@@ -43,7 +58,7 @@ Output:
 
 
 
-
+# Solution 3
 # Program to print even numbers up to x with commas and a period at the end.
 # Take input from user
 
@@ -72,29 +87,33 @@ Output:
 2,4,6,8,10.
 
 
-# Program to print even numbers up to x (with proper format)
+# Solution 4
+# Program to print even numbers up to a given number
+# If the last number is even, end with a period instead of a comma.
 
-x = int(input("Enter x: "))  # Take input from user
+# Taking input from the user
+x = int(input("Enter a number: "))
 
-# Determine the last even number before x
+# Initialize l and calculate the last even number
+l = 0
 if x % 2 == 0:
-    last_even = x - 2
+    l = x - 2
 else:
-    last_even = x - 1
+    l = x - 1
 
-# Print even numbers separated by commas, ending with a period
-for i in range(2, x):  # start from 2 because we only want even numbers
-    if i % 2 == 0:
-        if i == last_even:
-            print(i, end=".")  # last even number ends with a period
+# Print even numbers with commas, last number with a period
+for i in range(1, x):
+    if i % 2 == 0:  # check if number is even
+        if i == l:
+            print(i, end=".")  # last even number ends with period
         else:
             print(i, end=",")
-
 Input
-Enter x: 12
+Enter a number: 12
 
 Output
 2,4,6,8,10.
+
 
 
 # Solution 4
@@ -119,6 +138,5 @@ print(b, end=".")
 
 Input:
 Enter x: 11
-
 Output:
 2,4,6,8,10.
