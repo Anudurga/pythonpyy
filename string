@@ -1,0 +1,124 @@
+# ----------------------------
+# Python Strings Examples
+# ----------------------------
+
+# 1. Different ways to declare strings
+print("hello\'anu", end=" ")  # escape single quote
+print("world")  # Output: hello'anu world
+
+# Triple quotes
+a = """This is a triple-quoted string"""
+print(a)  # Output: This is a triple-quoted string
+print(type(a))  # Output: <class 'str'>
+
+# Single and double quotes
+a = 'anu'
+print(a, type(a))  # Output: anu <class 'str'>
+a = "anu"
+print(a, type(a))  # Output: anu <class 'str'>
+
+# ----------------------------
+# Bytes / Streams
+# ----------------------------
+a = b'7'
+print(a, type(a))  # Output: b'7' <class 'bytes'>
+
+# ----------------------------
+# Raw strings
+# ----------------------------
+a = r"anu\nDurga"
+b = R"anu\tDurga"
+print(a, type(a))  # Output: anu\nDurga <class 'str'>
+print(b, type(b))  # Output: anu\tDurga <class 'str'>
+
+# ----------------------------
+# f-Strings (formatted strings)
+# ----------------------------
+first = input("Enter first name: ")
+second = input("Enter second name: ")
+print(f"This is {first}, {second} every time")
+
+x = 99.8341360
+print(f"Anu is {x:.2f}")  # Output: Anu is 99.83
+
+# ----------------------------
+# String formatting with .format() and %
+# ----------------------------
+name = "nnn"
+age = 18
+print("Hi, welcome to {}!".format("CV Corp"))  # Hi, welcome to CV Corp!
+print("Hi, {1} welcome to {0}".format(name, age))  # Hi, 18 welcome to nnn
+
+name = "tttt"
+age = 18
+print("Hi, welcome %r to %s" % (name, age))  # Hi, welcome 'tttt' to 18
+
+# ----------------------------
+# String Slicing
+# ----------------------------
+a = "anu durga"
+b = "ffiiaaa"
+print(a[0:6:2])  # Output: auu
+print(b)  # Output: ffiiaaa
+
+# Indexing
+a = "anu"
+print(a[2])  # Output: u
+
+# Length
+a = "anu durga adapa"
+print(len(a))  # Output: 17
+
+# Case conversions
+a = "anuDurga"
+print(a.upper())  # ANUDURGA
+a = "anuDiuraga"
+print(a.lower())  # anudiuraga
+a = "anu,Durga dddd ffafaaf"
+print(a.title())  # Anu,Durga Dddd Ffafaaf
+
+# Reverse string
+a = "anudurga"
+print(a[::-1])  # agruduna
+
+# Strip, lstrip, rstrip
+a = "...anu durga adapa is the good..."
+print(a.strip("."))  # anu durga adapa is the good
+print(a.rstrip("."))  # ...anu durga adapa is the good
+print(a.lstrip("."))  # anu durga adapa is the good...
+
+# ----------------------------
+# Concatenation
+# ----------------------------
+a = "anu durga adapa "
+b = "annnnn bbababaab"
+print(a + b)  # anu durga adapa annnnn bbababaab
+
+# ----------------------------
+# Join
+# ----------------------------
+l = ["anu", "Durga", "kkkk"]
+jo = ",".join(l)
+print(jo)  # anu,Durga,kkkk
+
+l = ["anu", "Durga"]
+jo = " ".join(l)
+print(jo)  # anu Durga
+
+# ----------------------------
+# Split
+# ----------------------------
+# Default split (space)
+a = "anu durga adapa is the good..."
+b = a.split()
+print(b)  # ['anu', 'durga', 'adapa', 'is', 'the', 'good...']
+
+# Split with separator
+a = "anu,durga,adapa,is,the,good..."
+p = a.split(",")
+print(p)  # ['anu', 'durga', 'adapa', 'is', 'the', 'good...']
+
+# Split by newline
+a = "anu\ndurga\nadapa\nis\nthe\ngood..."
+b = a.split("\n")
+print(b)  # ['anu', 'durga', 'adapa', 'is', 'the', 'good...']
