@@ -1,0 +1,54 @@
+# Program to print the series: 1, 2, 4, 7, 11, 16, 22, 29, ...
+# Each term is obtained by adding an incrementally increasing number to the previous term
+# Increment starts from 1 and increases by 1 for each next term
+
+# Take user input for the maximum number (x) up to which series should be printed
+x = int(input("Enter the maximum number (x): "))
+
+# Initialize the first term
+count = 1
+print("Series up to", x, "is:")
+print(count, end=" ")  # Print the first term
+
+# Generate and print the rest of the series
+for i in range(1, x):
+    count += i
+    if count <= x:
+        print(count, end=" ")
+    else:
+        break  # Stop if the next term exceeds x
+
+Input:
+Enter the maximum number (x): 30
+Output:
+Series up to 30 is:
+1 2 4 7 11 16 22 29
+
+
+
+
+
+# Program to print the series: 1, 2, 4, 7, 11, 16, 22, 29, ...
+# Each term increases by a difference that starts at 1 and increases by 1 each time.
+
+# Input from user
+x = int(input("Enter the maximum number (x): "))
+
+# Initialize the first number and the difference
+current = 1
+diff = 1
+
+print("Series up to", x, "is:")
+
+# Loop to generate and print the series
+while current <= x:
+    print(current, end=" ")
+    current += diff  # add the current difference
+    diff += 1        # increment the difference for next term
+
+
+Input:
+Enter the maximum number (x): 30
+Output:
+Series up to 30 is:
+1 2 4 7 11 16 22 29
