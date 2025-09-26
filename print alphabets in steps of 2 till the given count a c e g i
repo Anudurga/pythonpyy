@@ -1,0 +1,13 @@
+# Program to print alphabets in steps of 2 till the given count
+# Example: a c e g i ...
+
+# Taking input from user
+x = int(input("Enter the number of letters you want to print (up to 26): "))
+
+# Printing the series using ASCII values
+for i in range(0, x, 2):
+    print(chr(97 + i), end=" ")
+Input:
+Enter the number of letters you want to print (up to 26): 17
+Output:
+a c e g i k m o q
