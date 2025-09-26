@@ -50,3 +50,64 @@ for i in range(a):
     else:
         c = "1"
 
+
+
+#solution 3
+# Pattern Printing Program
+
+This program prints a repeating pattern of `1, a, @` based on the number of terms given by the user.
+
+# Program to print the pattern: 1, a, @, 1, a, @, ...
+x = int(input("Enter number of terms: "))
+
+for i in range(x - 1):
+    if i % 3 == 0:
+        print(1, end=",")
+    elif i % 3 == 1:
+        print("a", end=",")
+    elif i % 3 == 2:
+        print("@", end=",")
+
+# For the last element, end with a dot (.)
+if (x - 1) % 3 == 0:
+    print(1, end=".")
+elif (x - 1) % 3 == 1:
+    print("a", end=".")
+elif (x - 1) % 3 == 2:
+    print("@", end=".")
+
+Input:
+Enter number of terms: 6
+
+Output:
+1,a,@,1,a,@.
+
+
+
+
+# Program: Print a repeating sequence 1, a, @ up to x terms
+
+# Taking input from the user
+x = int(input("Enter the number of terms: "))
+
+# Loop through 0 to x-1
+for i in range(x):
+    if i == x - 1:  # For last element, use '.' instead of ','
+        if (x - 1) % 3 == 0:
+            print(1, end=".")
+        elif (x - 1) % 3 == 1:
+            print("a", end=".")
+        elif (x - 1) % 3 == 2:
+            print("@", end=".")
+    else:
+        if i % 3 == 0:
+            print(1, end=",")
+        elif i % 3 == 1:
+            print("a", end=",")
+        elif i % 3 == 2:
+            print("@", end=",")
+Input Example
+Enter the number of terms: 6
+
+Output Example
+1,a,@,1,a,@.
