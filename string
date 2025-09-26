@@ -108,7 +108,7 @@ auu
 u
 3
 
-Case Conversion
+#11.Case Conversion
 a = "anuDurga"
 print(a.upper())   # convert to uppercase
 print(a.lower())   # convert to lowercase
@@ -116,21 +116,19 @@ print(a.title())   # capitalize each word
 
 
 Output:
-
 ANUDURGA
 anudurga
 Anudurga
 
-1️⃣2️⃣ Reverse a String
+#12.Reverse a String
 a = "anudurga"
 print(a[::-1])
 
 
 Output:
-
 agruduna
 
-1️⃣3️⃣ Strip Characters
+#13.Strip Characters
 a = "...anu durga adapa..."
 print(a.strip("."))   # remove leading/trailing dots
 print(a.rstrip("."))  # remove only trailing dots
@@ -138,22 +136,20 @@ print(a.lstrip("."))  # remove only leading dots
 
 
 Output:
-
 anu durga adapa
 ...anu durga adapa
 anu durga adapa...
 
-1️⃣4️⃣ Concatenation
+#14.Concatenation
 a = "anu durga adapa "
 b = "annnnn bbababaab"
 print(a + b)
 
 
 Output:
-
 anu durga adapa annnnn bbababaab
 
-1️⃣5️⃣ Join & Split
+#15.Join & Split
 l = ["anu", "Durga", "kkkk"]
 print(",".join(l))   # join with comma
 print(" ".join(l))   # join with space
@@ -166,13 +162,13 @@ print(a.split("\n"))  # split by newline
 
 
 Output:
-
 anu,Durga,kkkk
 anu Durga kkkk
 ['anu', 'durga', 'adapa', 'is', 'the', 'good...']
 ['anu', 'durga', 'adapa', 'is', 'the', 'good...']
 
-1️⃣6️⃣ Find & Index
+
+#16.Find & Index
 a = "anu djjj jjd  djdhdd"
 print(a.find("u"))     # first occurrence
 print(a.find("jj"))    # first occurrence
@@ -181,7 +177,6 @@ print(a.rfind("djjj")) # last occurrence
 
 
 Output:
-
 1
 4
 8
