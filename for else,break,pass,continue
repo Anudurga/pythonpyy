@@ -10,6 +10,7 @@ Output
 2 4 6 8 10 anu
 
 
+
 # Program to demonstrate 'for-else' with break
 
 for i in range(8):  # Loop from 0 to 7
@@ -22,6 +23,7 @@ else:
 Output:
 0 1 2 3 4 5 6 
 
+
 # Program: Demonstrate the use of 'pass' in a loop
 
 # Loop from 0 to 8
@@ -32,3 +34,27 @@ for i in range(9):
 else:
     print("anu")  # This runs after the loop completes
 
+
+Output
+0 1 2 3 4 5 6 7 8 anu
+
+
+
+
+# Python Program: Skip a Number using `continue`
+
+## Description
+This program prints numbers from `0` to `8` but 
+**skips the number 7** using the `continue` statement. 
+After the loop completes, it prints `"anu"` using the `else` block of the `for` loop.
+
+
+for i in range(9):
+    if i == 7:
+        continue  # Skip the number 7
+    print(i, end=" ")
+else:
+    print("anu")  # Executes after the loop completes
+
+Output
+0 1 2 3 4 5 6 8 anu
