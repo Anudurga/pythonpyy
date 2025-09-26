@@ -1,0 +1,36 @@
+# Program: Fit-Bit Printer
+# This program takes an integer 'x' from the user
+# and prints a sequence from 1 to x with the following rules:
+# 1. If the number ends with 1 (like 1, 11, 21...), print "1".
+# 2. If the number is divisible by 5, print "fitbit".
+# 3. If the number is even (divisible by 2), print "fit".
+# 4. Otherwise, print "bit".
+
+# Input
+x = int(input("Enter a number: "))
+
+# Processing & Output
+for i in range(1, x + 1):
+    if i % 10 == 1:         # numbers ending with 1
+        print(1)
+    elif i % 5 == 0:        # multiples of 5
+        print("fitbit")
+    elif i % 2 == 0:        # even numbers
+        print("fit")
+    else:                   # odd numbers not ending with 1
+        print("bit")
+
+Input
+Enter a number: 10
+
+Output
+1
+fit
+bit
+fit
+fitbit
+fit
+bit
+fit
+bit
+fitbit
