@@ -1,0 +1,19 @@
+# Program to print alternate even numbers between two numbers
+
+# Taking input from the user
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+c = 0  # Counter to track alternate numbers
+
+# Loop from a+1 to b-1 (exclusive of a and b)
+for i in range(a + 1, b):
+    if i % 2 == 0:  # Check if number is even
+        if c % 2 == 0:  # Print only alternate even numbers
+            print(i, end=" ")
+        c += 1  # Increment counter
+Input:
+Enter a: 10
+Enter b: 30
+Output:
+12 16 20 24 28
