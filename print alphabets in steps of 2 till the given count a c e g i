@@ -11,3 +11,21 @@ Input:
 Enter the number of letters you want to print (up to 26): 17
 Output:
 a c e g i k m o q
+
+
+
+
+# Program to print characters in a specific pattern
+# Starting from 'a' (ASCII 97), incrementing by i each time (i starts from 2)
+
+ch = 97  # ASCII value of 'a'
+i = 2    # Step size, which increases after each iteration
+
+while ord('z') > ch:  # Continue until ch is less than ASCII of 'z'
+    print(chr(ch), end=" ")  # Convert ASCII to character and print
+    ch += i  # Increase ch by current step size
+    i += 1   # Increase step size for next loop
+
+
+Output
+a c f j o u 
