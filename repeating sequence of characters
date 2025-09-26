@@ -1,0 +1,52 @@
+#solution 1
+# Program to print pattern: 1 a @ 1 a @ ...
+
+# Taking input from user
+a = int(input("Enter a number: "))
+
+# Loop through 0 to a-1
+for i in range(a):
+    if i % 3 == 0:
+        print("1", end=" ")
+    elif i % 3 == 1:
+        print("a", end=" ")
+    else:
+        print("@", end=" ")
+Input
+Enter a number: 10
+Output :
+1 a @ 1 a @ 1 a @ 1
+
+
+
+
+#solution 2
+# Program: Print a sequence with 1, a, @ repeating pattern
+# Author: Your Name
+# Description:
+# This program takes an integer input 'a' from the user and prints
+# a repeating sequence of characters: 1, a, @.
+# The sequence continues until 'a' number of elements are printed.
+
+# Example:
+# Input: 5
+# Output: 1 a @ 1 a
+
+# Taking input from user
+a = int(input("Enter how many terms you want to print: "))
+
+# Initial value of the sequence
+c = "1"
+
+# Loop through 'a' times
+for i in range(a):
+    print(c, end=" ")  # Print the current character without new line
+
+    # Update 'c' to the next character in the sequence
+    if c == "1":
+        c = "a"
+    elif c == "a":
+        c = "@"
+    else:
+        c = "1"
+
