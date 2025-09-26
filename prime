@@ -1,18 +1,158 @@
 # Program to check whether a number is prime or not
-
 # Taking input from the user
 x = int(input("Enter a number: "))
 
 # Counter to count how many numbers divide x
 c = 0
-
 # Loop through numbers from 1 to x
 for i in range(1, x + 1):
     if x % i == 0:  # If i divides x completely
         c += 1      # Increase counter
-
 # If the number has exactly 2 divisors (1 and itself), it is prime
 if c == 2:
     print("Prime")
 else:
     print("Not Prime")
+
+
+Input 1:
+Enter a number: 7
+Output 1:
+Prime Number
+
+
+
+
+# Program to print all prime numbers in a given range (3 to 19)
+
+for i in range(3, 19):  # Loop through numbers from 3 to 18
+    c = 0  # Counter to count divisors of i
+    for j in range(1, i + 1):  # Check divisors from 1 to i
+        if i % j == 0:  # If j divides i completely
+            c += 1  # Increase divisor count
+    if c == 2:  # Prime numbers have exactly 2 divisors (1 and itself)
+        print(i, end=" ")  # Print prime number on the same line
+Output:
+3 5 7 11 13 17
+
+
+
+
+
+
+# Program to print all prime numbers in a given range
+
+# Taking input from the user
+a = int(input("Enter the starting number (a): "))
+b = int(input("Enter the ending number (b): "))
+
+# Loop through numbers in the range [a, b]
+for i in range(a, b + 1):
+    # Check if 'i' is prime
+    for j in range(2, i):
+        if i % j == 0:
+            break  # If divisible, not prime → exit inner loop
+    else:
+        print(i, end=" ")
+
+Input:
+Enter the starting number (a): 5
+Enter the ending number (b): 15
+Output:
+5 7 11 13
+
+
+
+
+# Program to print alternative prime numbers between a given range
+# Taking input from the user
+a = int(input("Enter the starting number (a): "))
+b = int(input("Enter the ending number (b): "))
+
+c = 0  # Counter to track prime numbers
+print(f"Alternative prime numbers between {a} and {b} are:")
+
+# Loop through each number in the range
+for i in range(a, b + 1):  # Check every number from a to b (inclusive)
+    for j in range(2, i):  # Check divisibility
+        if i % j == 0:  # If divisible, not prime
+            break
+    else:
+        if i != 1:      # Skip 1 because it's not prime
+            c += 1      # Prime found, increase counter
+            if c % 2 == 1:  # Print only alternative primes
+                print(i, end=" ")
+Input:
+Enter the starting number (a): 1
+Enter the ending number (b): 20
+Output:
+Alternative prime numbers between 1 and 20 are:
+2 5 11 17
+
+
+
+
+#Alternative prime numbers using function.
+# Take input from the user for the range [a, b]
+a = int(input("enter a"))  # Starting number of the range
+b = int(input("enter b"))  # Ending number of the range
+
+# Function to check if a number is prime
+def isprime(n):
+    # Loop through all numbers from 2 to n-1
+    for i in range(2, n):
+        if n % i == 0:  # If n is divisible by i, it's not prime
+            return False
+    else:
+        return True     # If no divisors found, n is prime
+
+c = 0  # Counter to track the number of primes found
+
+# Loop through all numbers from a to b
+for i in range(a, b+1):
+    if isprime(i) == True:  # Check if the current number is prime
+        c += 1              # Increment the prime counter
+        if c % 2 == 1:      # Print only primes in odd positions (1st, 3rd, 5th, ...)
+            print(i, end=" ")  # Print the prime number on the same line
+Input:
+enter a: 10
+enter b: 20
+
+Step 1: Find all primes between 10 and 20
+Primes: 11, 13, 17, 19
+Step 2: Pick primes at odd positions (1st, 3rd, …)
+1st prime → 11  (printed)
+2nd prime → 13  (skipped)
+3rd prime → 17  (printed)
+4th prime → 19  (skipped)
+
+Output:
+11 17
+
+
+
+
+#character in prime number
+# Function to check if a number is prime
+def isprime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    else:
+        return True
+
+# Taking input from the user
+a = int(input("Enter the starting number: "))
+b = int(input("Enter the ending number: "))
+
+# Looping through the range and printing corresponding alphabet for prime numbers
+for i in range(a, b + 1):
+    if isprime(i):
+        print(chr(96 + i), end=" ")
+
+Input:
+Enter the starting number: 2
+Enter the ending number: 10
+
+Output:
+b c e g
