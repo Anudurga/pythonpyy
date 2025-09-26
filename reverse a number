@@ -1,16 +1,18 @@
-# Program to reverse a number
+# Program to reverse a number and print its digits in reverse order
 
 # Take input from the user
 x = int(input("Enter a number: "))
 
-# Initialize a variable to store the reversed number
+# Initialize variable to store reversed number
 rev = 0
 
 # Loop until the number becomes 0
 while x != 0:
     rem = x % 10          # Get the last digit of the number
-    rev = rev * 10 + rem  # Add the digit to the reversed number
+    rev = rev * 10 + rem  # Append the last digit to the reversed number
     x = x // 10           # Remove the last digit from the original number
-
-# Display the reversed number
-print("Reversed number:", rev)
+    print(rem, end="")    # Print the last digit (to show digits in reverse order)
+Input:
+Enter a number: 507
+Ouput:
+705
