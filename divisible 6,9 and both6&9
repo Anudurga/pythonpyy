@@ -1,0 +1,35 @@
+# Program to find all numbers divisible by 6, 9, and both 6 & 9 in the range 10 to 100
+
+count_6 = 0      # Counter for numbers divisible by 6
+count_9 = 0      # Counter for numbers divisible by 9
+count_both = 0   # Counter for numbers divisible by both 6 and 9
+
+print("Numbers divisible by both 6 and 9:")
+
+for i in range(10, 101):
+    if i % 6 == 0 and i % 9 == 0:  # divisible by both 6 and 9
+        print(i, end="\n")
+        count_both += 1
+    if i % 6 == 0:                 # divisible by 6
+        count_6 += 1
+    if i % 9 == 0:                 # divisible by 9
+        count_9 += 1
+
+
+print("Total numbers divisible by both 6 and 9:", count_both)
+print("Total numbers divisible by 6:", count_6)
+print("Total numbers divisible by 9:", count_9)
+
+
+output:
+Numbers divisible by both 6 and 9:
+18 
+36 
+54 
+72 
+90 
+
+
+Total numbers divisible by both 6 and 9: 5
+Total numbers divisible by 6: 16
+Total numbers divisible by 9: 10
