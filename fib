@@ -86,3 +86,76 @@ while a < 26:
     b = c
 Output:
 a b c f k u 
+
+
+
+
+# Program: Alternative Fibonacci Series in a Given Range
+# Input: Two integers x and y representing the range of Fibonacci terms to consider.
+# Output: Fibonacci numbers printed alternatively (i.e., every second Fibonacci number) within the given range.
+# Initialize the first two Fibonacci numbers and a counter
+a = 0
+b = 1
+count = 0
+
+# Taking input from the user for the range
+x = int(input("Enter the starting range (x): "))
+y = int(input("Enter the ending range (y): "))
+
+# Generate Fibonacci numbers and print every alternate term in the given range
+for i in range(x, y + 1):
+    if count % 2 == 0:
+        print(a, end=" ")
+    c = a + b
+    a = b
+    b = c
+    count += 1
+
+
+Input:
+Enter the starting range (x): 1
+Enter the ending range (y): 10
+
+Output:
+0 1 3 8 21
+
+
+
+
+# Program: Fibonacci Series at Prime Indices
+# Description: This program prints Fibonacci numbers whose positions (indices) are prime numbers.
+
+# Function to check whether a number is prime
+def is_prime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+# Taking range input from the user
+g = int(input("enter g"))
+h = int(input("enter h"))
+
+# Initial Fibonacci numbers
+a = 0
+b = 1
+
+# Generate Fibonacci series and print numbers at prime indices
+for i in range(g, h + 1):
+    if is_prime(i):
+        print(a, end=" ")
+    c = a + b
+    a = b
+    b = c
+
+enter g: 1  
+enter h: 10
+
+
+Output:
+0 1 3 13
+
+
+
+
+
