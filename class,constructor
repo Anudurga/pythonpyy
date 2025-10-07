@@ -1,0 +1,73 @@
+1 Basic Class Example (No Constructor)
+class Person:
+    name = ""
+    age = 0
+    batch = "p1"
+
+# Creating an object of Person
+s1 = Person()
+s1.name = "Anu"
+s1.age = 1
+
+print(s1.name)  # Output: Anu
+print(s1.age)   # Output: 1
+
+
+Explanation: This defines a simple class Person with class variables name, age, and batch. 
+An object s1 is created, and its name and age are set individually. Output shows the assigned values.
+
+2 Class with Method and Self
+class Student:
+    name = ""
+    age = 0
+    batch = "p1"
+
+    def late(self):
+        print(self.name, "is late")
+
+# Creating an object
+s1 = Student()
+s1.name = "Anu"
+s1.late()      # Output: Anu is late
+s1.age = 1
+print(s1.name)  # Output: Anu
+print(s1.age)   # Output: 1
+
+
+Explanation: The Student class has a method late() that uses self to access the object's name.
+Methods inside a class can manipulate object-specific data.
+
+️3 Default Constructor
+class Student:
+    batch = "p1"
+    room_no = 24
+
+    def __init__(self):
+        self.name = ""
+        self.rollno = 0
+        self.marks = 100
+
+# Accessing class variables
+print(Student.batch)   # Output: p1
+print(Student.room_no) # Output: 24
+
+
+Explanation: The __init__() method is a default constructor that initializes instance variables 
+(name, rollno, marks) when an object is created. Class variables (batch, room_no) can still be
+accessed directly using the class name.
+
+
+4 Parameterized Constructor
+class Student:
+    def __init__(self, a, b, c):
+        self.name = a
+        self.rollno = b
+        self.marks = c
+
+# Creating object with parameters
+s1 = Student("Anu", 23, 100)
+print(s1.name, s1.rollno, s1.marks)  # Output: Anu 23 100
+
+
+Explanation: This is a parameterized constructor, where values are passed during object creation.
+The __init__ method assigns these values to instance variables using self.
