@@ -1,0 +1,64 @@
+# Recursion Example - Method 1
+def fun(a):
+    """
+    This function prints numbers from 4 down to 0 using recursion.
+    
+    Logic:
+    - Base case: Stop recursion when 'a' reaches 5.
+    - Recursive call: Call the function with a+1 first.
+    - Print: After returning from recursion, print the current value of 'a'.
+    
+    This creates a reverse order printing effect.
+    """
+    if a == 5:
+        return
+    fun(a + 1)
+    print(a)
+
+# Function call
+fun(0)
+
+
+Output:
+4
+3
+2
+1
+0
+
+
+# Program: Sum of numbers from 1 to n using recursion (second method)
+
+def sumOfNumbers(n):
+    if n == 0:
+        return 0  # Base case: when n is 0, sum is 0
+    x = sumOfNumbers(n - 1)  # Recursive call: sum of numbers up to n-1
+    return n + x  # Add current number n to the sum of previous numbers
+
+# Example usage
+print(sumOfNumbers(5))  
+
+# Output: 15
+
+
+# Program: Count the number of steps to reduce n to 0
+# Logic: If n is even, divide by 2; if n is odd, subtract 1
+
+def count_steps(n):
+    """
+    This function returns the number of steps required to reduce n to 0.
+    :param n: int - the number to reduce
+    :return: int - number of steps to reach 0
+    """
+    if n == 0:
+        return 0  # Base case: no steps needed if n is already 0
+    if n % 2 == 0:
+        n = n // 2  # If n is even, divide by 2
+    else:
+        n = n - 1   # If n is odd, subtract 1
+    return count_steps(n) + 1  # Recursive call + 1 step
+
+# Example usage
+print(count_steps(100))
+
+
