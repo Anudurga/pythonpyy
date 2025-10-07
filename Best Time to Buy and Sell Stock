@@ -1,0 +1,32 @@
+# Program: Best Time to Buy and Sell Stock
+# Problem:
+# Given a list of stock prices (each element representing the price on a given day),
+# find the maximum profit that can be achieved by buying the stock on one day
+# and selling it on another later day.
+
+# Input:
+# prices = [8, 2, 4, 9, 6, 1]
+# Here, 8 is the price on day 1, 2 is on day 2, and so on.
+
+# Output:
+# Maximum Profit = 7
+# (Buy at 2 on day 2 and sell at 9 on day 4)
+
+
+# Code Implementation:
+
+prices = [8, 2, 4, 9, 6, 1]
+max_profit = -9999  # To track overall maximum profit
+profit = -9999      # To track profit between each pair
+
+for i in range(len(prices) - 1):       # Loop through each buying day
+    for j in range(i + 1, len(prices)):  # Loop through possible selling days after buying day
+        if prices[j] - prices[i] > profit:
+            profit = prices[j] - prices[i]  # Update profit if current difference is higher
+    if profit > max_profit:
+        max_profit = profit  # Update overall maximum profit
+
+print("Maximum Profit:", max_profit)
+
+Output:
+Maximum Profit: 7
