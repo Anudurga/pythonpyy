@@ -52,6 +52,8 @@ print(Student.batch)   # Output: p1
 print(Student.room_no) # Output: 24
 
 
+
+
 Explanation: The __init__() method is a default constructor that initializes instance variables 
 (name, rollno, marks) when an object is created. Class variables (batch, room_no) can still be
 accessed directly using the class name.
@@ -71,3 +73,32 @@ print(s1.name, s1.rollno, s1.marks)  # Output: Anu 23 100
 
 Explanation: This is a parameterized constructor, where values are passed during object creation.
 The __init__ method assigns these values to instance variables using self.
+
+
+
+
+
+# Define a class named A
+class A:
+    # Constructor method: called when an object is created
+    def __init__(self, a, b):
+        self.a = a   # Instance variable 'a'
+        self.b = b   # Instance variable 'b'
+
+    # __repr__ method defines how the object should be represented (string form)
+    def __repr__(self):
+        return f"A({self.a},{self.b})"
+
+# Create an object of class A with values 1 and 2
+obj = A(1, 2)
+
+# Print the object
+print(obj)
+
+Output:
+A(1,2)
+
+
+Extra Info
+If you did not define __repr__, Python would print something like:
+<__main__.A object at 0x00000234B3F5A700>
