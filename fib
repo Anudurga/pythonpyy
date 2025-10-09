@@ -158,4 +158,45 @@ Output:
 
 
 
+# Program to find the nth Fibonacci number using recursion
 
+def fibonacci(n, a=0, b=1):
+    # Base case: if n == 0, return a (the first Fibonacci number)
+    if n == 0:
+        return a
+    # Base case: if n == 1, return b (the second Fibonacci number)
+    elif n == 1:
+        return b
+    else:
+        # Recursive case: calculate the next Fibonacci number
+        c = a + b
+        # Move one step forward (n decreases by 1)
+        return fibonacci(n - 1, b, c)
+
+# Call the function with n = 6
+print(fibonacci(n=6))  # Output: 8
+
+
+
+
+
+# Program to find the nth Fibonacci number using simple recursion
+
+def fibonacci(n):
+    # Base case: if n is 0 or 1, return n directly
+    if n <= 1:
+        return n
+    else:
+        # Recursive case: sum of the previous two Fibonacci numbers
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Take input from the user
+num = int(input("Enter a number: "))
+
+# Display the result
+print("Fibonacci number at position", num, "is:", fibonacci(num))
+
+
+Sample Output
+Enter a number: 6
+Fibonacci number at position 6 is: 8
