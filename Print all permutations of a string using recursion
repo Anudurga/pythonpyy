@@ -1,0 +1,34 @@
+# Program: Print all permutations of a string using recursion
+
+
+# Function definition
+def permu(s, res=" "):
+    # Base case:
+    # If the input string is empty, the current 'res' contains one complete permutation
+    if len(s) == 0:
+        print(res, end=" ")  # print the permutation
+        return               # stop this recursive path
+
+    # Recursive case:
+    # Loop through each character in the string
+    for i in range(len(s)):
+        # 'ch' is the current character chosen
+        ch = s[i]
+
+        # 'ns' is the remaining string after removing the chosen character
+        # Example: if s = "abc" and i = 1 → ch = 'b', ns = "ac"
+        ns = s[:i] + s[i+1:]
+
+        # Recursive call:
+        # - 'ns' is the remaining string to permute
+        # - 'res + ch' adds the chosen character to the current result
+        permu(ns, res + ch)
+
+# Function call
+# Input: "abc"
+# This will print all permutations of "abc"
+permu("abc")
+
+
+output:
+ abc acb bac bca cab cba
