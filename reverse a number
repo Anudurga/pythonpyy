@@ -16,3 +16,60 @@ Input:
 Enter a number: 507
 Ouput:
 705
+
+
+
+# Program: Reverse a number using recursion
+
+
+# Function definition
+def reverse(s, rev=0):
+    # Base case:
+    # When the number 's' becomes 0, it means all digits are processed
+    # Return the reversed number stored in 'rev'
+    if s == 0:
+        return rev
+
+    # Recursive case:
+    # rev*10 shifts the current digits in 'rev' one place to the left
+    # s%10 extracts the last digit of 's'
+    # So, rev*10 + s%10 adds the last digit of 's' to 'rev'
+    # Then, call the function again with:
+    # - s//10 → removes the last digit from 's'
+    # - updated 'rev'
+    return reverse(s // 10, rev * 10 + s % 10)
+
+# Function call
+# Input: 1234
+# output: 4321
+print(reverse(1234))
+
+
+
+
+         
+# Program: Reverse a string using recursion
+
+
+# Function definition
+def rev_str(s):
+    # Base case:
+    # If the string is empty, return an empty string
+    # This stops the recursion
+    if s == "":
+        return ""
+    
+    # Recursive case:
+    # Take the first character of the string
+    ch = s[0]
+    
+    # Call the function recursively on the rest of the string (excluding the first character)
+    # After recursion returns, add the first character at the end
+    return rev_str(s[1:]) + ch
+
+# Function call
+# Input: "anudur"
+# output: "ruduna"
+print(rev_str("anudur"))
+
+
