@@ -1,0 +1,21 @@
+# --------------------------------------------
+# Program: Count the number of digits in a number using recursion
+# --------------------------------------------
+
+# Function definition
+def countnumbers(n):
+    # Base case:
+    # If n becomes 0, there are no more digits left to count
+    if n == 0:
+        return 0
+
+    # Recursive case:
+    # Divide the number by 10 to remove the last digit
+    # Each recursive call counts one digit
+    return countnumbers(n // 10) + 1
+
+
+# Function call
+# Here, we pass 1234 as input to the function
+# The output should be 4 because 1234 has 4 digits
+print(countnumbers(1234))
