@@ -1,0 +1,65 @@
+# Define a class A
+class A:
+    # Method m1() prints the value of x
+    def m1(self, x):
+        print(x)
+
+    # Method m2() calls m1() using the same parameter x
+    def m2(self, x):
+        self.m1(x)
+
+# Create an object of class A
+obj = A()
+
+# Call the method m2() with argument 7
+# This will internally call m1(7) and print 7
+obj.m2(7)
+
+
+Output:
+7
+
+
+
+
+# Define class A
+class A:
+    # Constructor to initialize values of a and b
+    def __init__(self, a=0, b=1):
+        self.a = a
+        self.b = b
+
+    # Method to check if b is a prime number
+    def isprime(self):
+        for i in range(2, self.b):
+            if self.b % i == 0:  # If divisible by any number, not prime
+                return False
+        return True  # No divisors found → prime number
+
+    # Method to represent object in readable format
+    def __repr__(self):
+        return f"A:{self.a},B:{self.b}"
+
+    # Method m() checks if 'a' is even and 'b' is prime
+    def m(self):
+        if self.a % 2 == 0 and self.isprime():
+            return True
+        return False
+
+# Create a list of objects
+l = [A(2,7), A(4,7), A(1,7), A(2,8)]
+
+# Create an empty list to store filtered objects
+fl = []
+
+# Loop through each object in the list
+for i in l:
+    if i.m():           # Check if the condition in m() is True
+        fl.append(i)    # Add to filtered list
+
+# Print the filtered list
+print(fl)
+
+
+Output:
+[A:2,B:7, A:4,B:7]
