@@ -1,0 +1,70 @@
+# Example 1
+class A:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def check(self):
+        if self.a > self.b:
+            return "Yes"
+        elif self.a < self.b:
+            return "No"
+        else:
+            return "Not Applicable"
+    def __eq__(self,other):
+        if self.a == other.a and self.b != other.b:
+            return True
+        return False
+
+obj=A(4,7)
+obj1=A(4,6)
+print(obj==obj1)
+# Output: True
+# Because: a values are same (4 == 4) and b values are different (7 != 6)
+# So, __eq__ returns True
+
+
+
+# Example 2
+class A:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def __add__(self,other):
+        return self.a + other.b, self.b + other.a
+    def __repr__(self):
+        return f'A({self.a},{self.b})'
+
+obj=A(4,7)
+obj1=A(4,3)
+print(obj+obj1)
+print(obj)
+# Output:
+# (7, 11)
+# A(4,7)
+# Explanation:
+# obj + obj1 → (4 + 3, 7 + 4) = (7, 11)
+# __repr__ prints the object as A(4,7)
+
+
+# Example 3
+class A:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+    def __eq__(self,other):
+        if self.x==other.x and self.y!= other.y:
+            return True
+        return False
+    def __add__(self,other):
+        return self.x + other.x
+    def __repr__(self):
+        return f'A({self.x},{self.y})'
+
+obj=A(4,12)
+obj1=A(4,8)
+print(obj==obj1)
+print(obj+obj1)
+
+# Output:
+# True
+# 8
