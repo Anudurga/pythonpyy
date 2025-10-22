@@ -1,0 +1,151 @@
+class A:
+    def __init__(self):
+        self.a = 1  # Instance variable
+        self.b = 2  # Instance variable
+
+# Create two objects
+obj = A()
+obj1 = A()
+
+# Create a class variable 'x'
+A.x = 7
+
+# Update instance variable 'x' for obj (this creates a new variable for that instance)
+obj.x = obj.x + 5   # obj.x = 7 + 5 = 12
+
+print(A.x)   # Prints class variable value (still 7)
+print(obj.x) # Prints instance variable value (12)
+
+
+Output:
+7
+12
+
+
+
+
+class A:
+    def __init__(self):
+        self.x = 5
+        self.y = 7
+
+    def fun(self, k):
+        print(self.y + k)  # Adds instance variable y with parameter k
+
+obj = A()
+obj.fun(5)
+
+Output:
+12
+
+
+
+class A:
+    def __init__(self, a, b):
+        self.x = a
+        self.y = b
+
+obj = A(5, 6)
+print(obj.x)
+
+Output:
+
+5
+
+
+#prime factors
+
+def isPrime(a):
+    for i in range(2, a):
+        if a % i == 0:
+            return False
+    return True
+
+n = int(input("Enter n: "))
+for i in range(2, n + 1):
+    if isPrime(i):
+        if n % i == 0:
+            print(i)
+
+
+Example Input/Output:
+Enter n: 28
+2
+7
+
+
+
+def isPrime(a):
+    for i in range(2, a):
+        if a % i == 0:
+            return False
+    return True
+
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+c = 0   # Counter for prime numbers
+
+for i in range(a, b + 1):
+    if isPrime(i):
+        c += 1
+        if c % 2 == 1:  # Print only alternate primes
+            print(i)
+Example Input/Output:
+
+Enter a: 10
+Enter b: 25
+11
+17
+23
+
+
+
+Operator Overloading & Prime Check in Class
+Question:
+
+
+class A:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    # Compare x values of two objects
+    def __eq__(self, other):
+        return self.x == other.x
+
+    # Check if y is prime
+    def isprime(self):
+        if self.y < 2:
+            return False
+        for i in range(2, self.y):
+            if self.y % i == 0:
+                return False
+        return True
+
+    # Update x based on primality of y
+    def update_x(self):
+        if self.isprime():
+            self.x = 1
+            print(self.x)
+        else:
+            self.x = 0
+            print(self.x)
+
+# Create an object
+obj = A(2, 2)
+
+# Compare x and y values
+print(obj.x == obj.y)  # Compare numeric values (not using __eq__)
+
+# Update x depending on primality of y
+obj.update_x()
+
+Explanation:
+
+obj.x == obj.y → 2 == 2 → True
+
+isprime(2) → True → So x is updated to 1 and printed.
+
+Output:
+True
+1
