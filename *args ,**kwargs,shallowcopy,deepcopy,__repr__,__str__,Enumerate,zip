@@ -1,0 +1,213 @@
+# -------------------------------
+# *args  → Variable-length positional arguments
+# -------------------------------
+
+def fun(*args):
+    total = 0
+    for num in args:       # Iterate through all positional arguments
+        total += num
+    return total
+
+print(fun(1, 2, 3, 4, 5))   # Output: 15
+print(fun(1, 2, 3, 4, 10))  # Output: 20
+
+
+# Same function but printing instead of returning
+def fun(*args):
+    total = 0
+    for num in args:
+        total += num
+    print(total)
+
+fun(1, 2, 3, 4, 5)   # Output: 15
+fun(1, 2, 3, 4, 10)  # Output: 20
+
+
+# Passing one normal argument with *args
+def fun(anu, *args):
+    for num in args:
+        print(f'{anu}, {num}')
+
+fun(1, 2, 3, 4, 5)
+# Output:
+# 1, 2
+# 1, 3
+# 1, 4
+# 1, 5
+
+
+# -------------------------------
+# **kwargs → Variable-length keyword arguments
+# -------------------------------
+
+def fun(**kwargs):
+    for key, value in kwargs.items():
+        print(f'{key}, {value}')
+
+fun(name='A', age=20, height=20)
+fun(name='O', age=70, height=70)
+# Output:
+# name, A
+# age, 20
+# height, 20
+# name, O
+# age, 70
+# height, 70
+
+
+# Combining positional, *args, and **kwargs
+def fun(title, *args, **kwargs):
+    print(f'Title: {title}')
+
+    print("Positional arguments:")
+    for arg in args:
+        print(arg)
+
+    print("Keyword arguments:")
+    for kwarg, value in kwargs.items():
+        print(f'{kwarg}: {value}')
+
+fun("btech", "anu", 20, name='A', age=20, height=20)
+# Demonstrates combined usage of all argument types
+
+
+# -------------------------------
+# Shallow Copy vs Deep Copy
+# -------------------------------
+
+# Method 1 — Assignment (both variables refer to same list)
+l = [1, 2, 3, 4, 5]
+l2 = l
+l2[0] = 6
+print(l)   # [6, 2, 3, 4, 5]
+print(l2)  # [6, 2, 3, 4, 5]
+
+
+# Shallow Copy — copies top-level elements only
+l = [1, 2, 3, [4]]
+l2 = l.copy()
+l2[0] = 6
+l2[3].append(7)
+print(l)   # [1, 2, 3, [4, 7]]  (nested list is shared)
+print(l2)  # [6, 2, 3, [4, 7]]
+
+
+# Deep Copy — duplicates everything including nested objects
+import copy
+l = [1, 2, 3, [4]]
+l2 = copy.deepcopy(l)
+l2[3].append(7)
+print(l)   # [1, 2, 3, [4]]
+print(l2)  # [1, 2, 3, [4, 7]]
+
+
+# -------------------------------
+# __repr__ and __str__ methods
+# -------------------------------
+
+# __repr__ provides an official string representation (for developers)
+class A:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return f'values of x, y are {self.x}, {self.y}'
+
+obj = A(1, 2)
+print(obj)   # Output: values of x, y are 1, 2
+
+
+# __str__ provides a user-friendly string representation
+class A:
+    def __init__(self, a, b):
+        self.x = a
+        self.y = b
+
+    def __str__(self):
+        return f'{self.x}, {self.y}'
+
+    def __repr__(self):
+        return f'values of x, y are {self.x}, {self.y}'
+
+obj = A(1, 2)
+print(obj)   # Output: 1, 2 (uses __str__)
+print(repr(obj))  # Output: values of x, y are 1, 2 (uses __repr__)
+
+
+# -------------------------------
+# Mutable Default Argument Example
+# -------------------------------
+
+def fun(a=None):
+    if a is None:
+        a = []       # Avoids mutable default trap
+    a.append(1)
+    return a
+
+l = [1, 2, 3, 4, 5]
+print(fun(l))  # [1, 2, 3, 4, 5, 1]
+print(fun())   # [1]
+print(fun())   # [1]  (separate list each time)
+
+
+# -------------------------------
+# Class with Mutable Default Argument
+# -------------------------------
+
+class A:
+    def __init__(self, a=[2]):  # BAD practice: mutable default
+        self.a = a
+
+obj = A()
+obj1 = A()
+obj.a.append(1)
+print(obj.a)   # [2, 1]
+print(obj1.a)  # [2, 1] — shared list reference
+
+
+# -------------------------------
+# enumerate() and zip()
+# -------------------------------
+
+# enumerate() gives index and value
+l = [1, 2, 3, 4, 5]
+for i, a in enumerate(l):
+    print(i, a)
+# Output:
+# 0 1
+# 1 2
+# 2 3
+# 3 4
+# 4 5
+
+
+# zip() combines elements from multiple lists
+l = [1, 2, 3, 4, 5]
+l1 = [1, 3, 4, 7]
+for i, a in zip(l, l1):
+    print(i, a)
+# Output:
+# 1 1
+# 2 3
+# 3 4
+# 4 7
+
+
+# -------------------------------
+# map() and lambda function
+# -------------------------------
+
+# Using map() with a normal function
+l = [1, 2, 3, 4, 5]
+def sqr(x):
+    return x ** 2
+
+l1 = list(map(sqr, l))
+print(l1)   # [1, 4, 9, 16, 25]
+
+
+# Using map() with a lambda function
+l = [1, 2, 3, 4, 5]
+l1 = list(map(lambda x: x ** 2, l))
+print(l1)   # [1, 4, 9, 16, 25]
